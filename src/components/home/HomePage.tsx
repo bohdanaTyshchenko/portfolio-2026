@@ -24,6 +24,7 @@ export function HomePage() {
   const [openPanel, setOpenPanel] = useState<OpenPanel | null>(null);
   const [panelOrigin, setPanelOrigin] = useState<DOMRect | null>(null);
   const [panelTarget, setPanelTarget] = useState<DOMRect | null>(null);
+  const suppressCaseOpen = useRef(false);
 
   const openPanelByGuide = (guide: OpenPanel) => {
     if (!gridRef.current) {
@@ -36,25 +37,32 @@ export function HomePage() {
       return;
     }
 
+    suppressCaseOpen.current = false;
     setPanelOrigin(rects.origin);
     setPanelTarget(rects.target);
     setOpenPanel(guide);
   };
 
   const closePanel = () => {
+    if (searchParams.get("case")) {
+      suppressCaseOpen.current = true;
+      router.replace("/", { scroll: false });
+    }
+
     setOpenPanel(null);
     setPanelOrigin(null);
     setPanelTarget(null);
-
-    if (searchParams.get("case")) {
-      router.replace("/", { scroll: false });
-    }
   };
 
   const prevModeRef = useRef(mode);
 
   useEffect(() => {
-    if (!caseSlug || openPanel === "my-work") {
+    if (!caseSlug) {
+      suppressCaseOpen.current = false;
+      return;
+    }
+
+    if (suppressCaseOpen.current || openPanel === "my-work") {
       return;
     }
 

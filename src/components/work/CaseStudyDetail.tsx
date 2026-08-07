@@ -4,7 +4,6 @@ import type { CaseStudy } from "@/lib/types";
 
 type CaseStudyDetailProps = {
   study: CaseStudy;
-  placeholderColor?: "green" | "orange" | "pink" | "blue";
 };
 
 function SectionTitle({ children }: { children: string }) {

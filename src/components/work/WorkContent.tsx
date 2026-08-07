@@ -18,7 +18,6 @@ type WorkContentProps = {
   initialSlug?: string | null;
 };
 
-const PLACEHOLDER_COLORS = ["green", "orange", "pink", "blue"] as const;
 const ANIMATION_MS = 520;
 
 function scheduleOpen(setDetailOpen: (open: boolean) => void) {
@@ -148,14 +147,6 @@ export function WorkContent({ onClose, initialSlug = null }: WorkContentProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialSlug, caseStudies]);
 
-  const placeholderColor =
-    PLACEHOLDER_COLORS[
-      Math.max(
-        0,
-        caseStudies.findIndex((study) => study.id === selectedStudy?.id),
-      ) % PLACEHOLDER_COLORS.length
-    ];
-
   return (
     <PanelContent
       title={selectedStudy?.title ?? "My work"}
@@ -178,10 +169,7 @@ export function WorkContent({ onClose, initialSlug = null }: WorkContentProps) {
                 Loading case study…
               </p>
             ) : (
-              <CaseStudyDetail
-                study={selectedStudy}
-                placeholderColor={placeholderColor}
-              />
+              <CaseStudyDetail study={selectedStudy} />
             )}
           </CaseStudyExpand>
         ) : loadingList ? (
@@ -194,15 +182,9 @@ export function WorkContent({ onClose, initialSlug = null }: WorkContentProps) {
           </p>
         ) : (
           <ul className="flex w-full flex-col gap-12 sm:gap-14 lg:gap-20">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <li key={study.id}>
-                <CaseStudyCard
-                  study={study}
-                  placeholderColor={
-                    PLACEHOLDER_COLORS[index % PLACEHOLDER_COLORS.length]
-                  }
-                  onOpen={openStudy}
-                />
+                <CaseStudyCard study={study} onOpen={openStudy} />
               </li>
             ))}
           </ul>

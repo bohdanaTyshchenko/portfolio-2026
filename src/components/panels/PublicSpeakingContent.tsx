@@ -129,13 +129,11 @@ export function PublicSpeakingContent({ onClose }: PublicSpeakingContentProps) {
             <EventPhoto
               src="/images/speaking/picnic-01.png"
               alt="A large group of designers posing together at a park picnic in Toronto"
-              caption="Design picnic in Toronto — 140+ sign-ups"
               aspectClass="aspect-[4/3]"
             />
             <EventPhoto
               src="/images/speaking/picnic-02.png"
               alt="A group of designers gathered around picnic blankets in a Toronto park"
-              caption="Snacks, blankets, and design talk in the park"
               aspectClass="aspect-[4/3]"
             />
           </div>

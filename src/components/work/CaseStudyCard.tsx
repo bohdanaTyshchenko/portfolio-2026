@@ -7,26 +7,12 @@ import { MaterialIcon } from "@/components/icons/MaterialIcon";
 import { ProfessionalArrowCircle } from "@/components/home/ProfessionalArrowCircle";
 import type { CaseStudy } from "@/lib/types";
 
-type PlaceholderColor = "green" | "orange" | "pink" | "blue";
-
 type CaseStudyCardProps = {
   study: CaseStudy;
-  placeholderColor: PlaceholderColor;
   onOpen: (study: CaseStudy) => void;
 };
 
-const PLACEHOLDER_BG: Record<PlaceholderColor, string> = {
-  green: "bg-p-green",
-  orange: "bg-p-orange",
-  pink: "bg-p-pink",
-  blue: "bg-p-blue",
-};
-
-export function CaseStudyCard({
-  study,
-  placeholderColor,
-  onOpen,
-}: CaseStudyCardProps) {
+export function CaseStudyCard({ study, onOpen }: CaseStudyCardProps) {
   const { mode } = usePortfolioMode();
   const isProfessional = mode === "professional";
 
@@ -36,9 +22,7 @@ export function CaseStudyCard({
       onClick={() => onOpen(study)}
       className="group/case flex w-full flex-col gap-4 text-left sm:gap-5 lg:gap-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-p-text"
     >
-      <div
-        className={`relative aspect-[16/9] w-full overflow-hidden rounded-xl ${PLACEHOLDER_BG[placeholderColor]}`}
-      >
+      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-p-grey-5">
         {study.cover_image_url ? (
           <Image
             src={study.cover_image_url}
