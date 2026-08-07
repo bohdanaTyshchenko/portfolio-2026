@@ -100,7 +100,11 @@ export function HomeGrid({ gridRef, workCardRef, onOpenPanel }: HomeGridProps) {
             label="Email"
             professional={isProfessional}
           />
-          <LinkRow label="resume" professional={isProfessional} />
+          <LinkRow
+            href="https://drive.google.com/file/d/1w1Lv25BSRLxVa3X_ikBOLDJ4-EmbaEwJ/view?usp=sharing"
+            label="resume"
+            professional={isProfessional}
+          />
         </div>
       </GridCard>
 
