@@ -191,6 +191,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     tags: ["Product design", "Design systems", "Navigation"],
     status: "published",
     sort_order: 3,
+    created_at: TIMESTAMP,
+    updated_at: TIMESTAMP,
+    problem:
+      "Dig One had outgrown its navigation as the product suite expanded through new features and acquisitions, with no structure left to absorb what came next.",
     process:
       "I redesigned the navigation end to end — top bar, sidebar, account switcher, and a documented component system built for products that didn't exist yet.",
     outcome:
