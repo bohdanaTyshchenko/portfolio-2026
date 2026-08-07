@@ -314,29 +314,6 @@ body {
     filter var(--duration-mode) var(--ease-out-expo);
 }
 
-@media (max-width: 1023px) {
-  .home-card {
-    min-height: 420px;
-    height: auto;
-  }
-
-  .home-card-portrait {
-    min-height: 480px;
-  }
-
-  [data-portfolio-mode="creative"] .home-card-portrait {
-    min-height: 0;
-    height: auto;
-  }
-
-  .home-card-my-work {
-    min-height: 560px;
-  }
-
-  .home-card-connect {
-    min-height: 520px;
-  }
-}
 
 [data-portfolio-mode="professional"] .home-card-professional-spotlight {
   transition:

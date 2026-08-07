@@ -74,7 +74,7 @@ export function HomeGrid({ gridRef, workCardRef, onOpenPanel }: HomeGridProps) {
         data-guide="connect"
         className={homeCardClass(
           mode,
-          "home-card-connect flex flex-col justify-end !overflow-visible bg-p-white px-4 py-4 sm:px-7 sm:py-7 lg:px-9 lg:py-11",
+          "home-card-connect flex flex-col justify-end overflow-hidden bg-p-white p-4 sm:p-7 lg:p-9",
           "home-card-connect flex flex-col justify-end overflow-hidden rounded-[20px] bg-p-grey-5 p-4 sm:p-7 lg:p-9",
           { staticCard: true },
         )}

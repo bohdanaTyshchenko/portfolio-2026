@@ -15,7 +15,9 @@ export function homeCardClass(
   options: { spotlight?: boolean; staticCard?: boolean } = {},
 ) {
   const { spotlight = false, staticCard = false } = options;
-  const base = "home-card lg:h-full lg:min-h-0";
+  // Fixed mobile height so every home box matches; desktop fills the grid row.
+  const base =
+    "home-card h-[420px] min-h-[420px] max-h-[420px] lg:h-full lg:min-h-0 lg:max-h-none";
   const spotlightClass =
     mode === "professional" && spotlight
       ? " home-card-professional-spotlight"

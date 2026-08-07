@@ -156,8 +156,8 @@ export function WorkContent({ onClose, initialSlug = null }: WorkContentProps) {
       scrollKey={
         showingDetail ? `detail-${mountedSlug}` : `list-${listScrollKey}`
       }
-      headerClassName="px-14 pb-6 pt-[max(1.5rem,env(safe-area-inset-top))]"
-      contentClassName={`px-14 pb-[max(2rem,env(safe-area-inset-bottom))] ${
+      headerClassName="pb-6 pt-[max(1.5rem,env(safe-area-inset-top))]"
+      contentClassName={`pb-[max(2rem,env(safe-area-inset-bottom))] ${
         showingDetail ? "pt-10 lg:pt-14" : "pt-6 lg:pt-10"
       }`}
     >

@@ -31,7 +31,7 @@ export function MyWorkCard({
       role="button"
       tabIndex={0}
       aria-label="Open my work"
-      className={`home-card home-card-my-work group relative flex min-h-0 cursor-pointer flex-col justify-end overflow-hidden px-4 py-3 sm:px-7 sm:py-5 lg:h-full lg:px-9 lg:py-11 ${
+      className={`home-card home-card-my-work group relative flex h-[420px] min-h-[420px] max-h-[420px] cursor-pointer flex-col justify-end overflow-hidden p-4 sm:p-7 lg:h-full lg:min-h-0 lg:max-h-none lg:p-9 ${
         professional
           ? "home-card-professional home-card-professional-spotlight rounded-[20px] bg-p-grey-5"
           : "motion-bg bg-p-white hover:bg-p-text/[0.03]"

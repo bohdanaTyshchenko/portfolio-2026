@@ -11,7 +11,9 @@ type PanelContentProps = {
   onBack?: () => void;
   backLabel?: string;
   scrollKey?: string;
+  /** Vertical spacing / extras only — horizontal inset is owned by PanelContent. */
   headerClassName?: string;
+  /** Vertical spacing / extras only — horizontal inset is owned by PanelContent. */
   contentClassName?: string;
   titleClassName?: string;
   children?: ReactNode;
@@ -22,6 +24,16 @@ const professionalIconButtonClass =
 
 const funIconButtonClass =
   "inline-flex shrink-0 items-center justify-center text-p-text motion-feedback hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-text";
+
+/**
+ * Match home card column width on mobile (grid gutter / card edge):
+ * home professional grid uses `px-4`; creative cards use `p-4`/`px-4`.
+ */
+function panelInsetX(isProfessional: boolean) {
+  return isProfessional
+    ? "px-4 lg:px-14"
+    : "px-4 sm:px-7 lg:px-14";
+}
 
 export function PanelContent({
   title,
@@ -40,6 +52,7 @@ export function PanelContent({
   const iconButtonClass = isProfessional
     ? professionalIconButtonClass
     : funIconButtonClass;
+  const insetX = panelInsetX(isProfessional);
 
   useEffect(() => {
     if (scrollKey === undefined) {
@@ -52,7 +65,7 @@ export function PanelContent({
   return (
     <div className="flex h-full min-h-0 flex-col bg-p-white">
       <header
-        className={`flex shrink-0 items-center justify-between ${headerClassName ?? "px-8 pb-6 pt-[max(1.5rem,env(safe-area-inset-top))]"}`}
+        className={`flex shrink-0 items-center justify-between ${insetX} ${headerClassName ?? "pb-6 pt-[max(1.5rem,env(safe-area-inset-top))]"}`}
       >
         <div className="flex min-w-0 items-center gap-3">
           {onBack ? (
@@ -84,7 +97,7 @@ export function PanelContent({
       {children ? (
         <div
           ref={scrollRef}
-          className={`min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain ${contentClassName ?? "px-8 py-9 pb-[max(2rem,env(safe-area-inset-bottom))] sm:py-11 lg:py-[52px]"}`}
+          className={`min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain ${insetX} ${contentClassName ?? "py-9 pb-[max(2rem,env(safe-area-inset-bottom))] sm:py-11 lg:py-[52px]"}`}
         >
           {children}
         </div>

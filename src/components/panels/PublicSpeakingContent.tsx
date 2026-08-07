@@ -103,8 +103,8 @@ export function PublicSpeakingContent({ onClose }: PublicSpeakingContentProps) {
     <PanelContent
       title="Talks, podcasts, and design events"
       onClose={onClose}
-      headerClassName="px-14 pb-6 pt-[max(1.5rem,env(safe-area-inset-top))]"
-      contentClassName="px-14 pb-[max(2rem,env(safe-area-inset-bottom))] pt-12 lg:pt-[150px]"
+      headerClassName="pb-6 pt-[max(1.5rem,env(safe-area-inset-top))]"
+      contentClassName="pb-[max(2rem,env(safe-area-inset-bottom))] pt-12 lg:pt-[150px]"
     >
       <div className="mx-auto flex w-full min-w-0 max-w-[1040px] flex-col gap-16 lg:gap-[160px]">
         <p className={`${typography.h4} text-p-text`}>

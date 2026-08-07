@@ -14,8 +14,8 @@ export function PortraitSection() {
       data-guide="portrait"
       className={homeCardClass(
         mode,
-        "home-card-portrait relative aspect-[4/5] w-full overflow-hidden lg:aspect-auto lg:min-h-0",
-        "home-card-portrait relative min-h-[480px] overflow-hidden rounded-[20px] lg:min-h-0",
+        "home-card-portrait relative w-full overflow-hidden",
+        "home-card-portrait relative overflow-hidden rounded-[20px]",
         { staticCard: true },
       )}
     >
