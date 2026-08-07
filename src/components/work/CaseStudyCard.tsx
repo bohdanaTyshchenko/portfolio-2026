@@ -20,7 +20,7 @@ export function CaseStudyCard({ study, onOpen }: CaseStudyCardProps) {
     <button
       type="button"
       onClick={() => onOpen(study)}
-      className="group/case flex w-full flex-col gap-4 text-left sm:gap-5 lg:gap-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-p-text"
+      className="group/case flex w-full cursor-pointer flex-col gap-4 text-left sm:gap-5 lg:gap-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-p-text"
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-p-grey-5">
         {study.cover_image_url ? (
