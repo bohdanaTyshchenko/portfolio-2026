@@ -20,10 +20,10 @@ type PanelContentProps = {
 };
 
 const professionalIconButtonClass =
-  "inline-flex shrink-0 items-center justify-center rounded-full border border-p-grey-20 bg-transparent transition-[background-color,border-color,box-shadow,opacity] duration-300 ease-out hover:border-transparent hover:bg-p-white hover:shadow-[0_4px_4.15px_rgba(0,0,0,0.1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-text size-[47px]";
+  "inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full border border-p-grey-20 bg-transparent transition-[background-color,border-color,box-shadow,opacity] duration-300 ease-out hover:border-transparent hover:bg-p-white hover:shadow-[0_4px_4.15px_rgba(0,0,0,0.1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-text size-[47px]";
 
 const funIconButtonClass =
-  "inline-flex shrink-0 items-center justify-center text-p-text motion-feedback hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-text";
+  "inline-flex shrink-0 cursor-pointer items-center justify-center text-p-text motion-feedback hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-p-text";
 
 /**
  * Match home card column width on mobile (grid gutter / card edge):
